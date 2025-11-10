@@ -2,21 +2,16 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy package files
 COPY package*.json ./
+RUN npm ci --only=production
 
-# Install dependencies
-RUN npm install
-
-# Copy application files
 COPY . .
 
-# Create directories for uploads
-RUN mkdir -p uploads compressed
+ENV NODE_ENV=production
+ENV PORT=5000
 
-# Expose port
 EXPOSE 5000
 
-# Start the application
-CMD ["npm", "start"]
+# Your app entrypoint (we see server.js in this folder)
+CMD ["node", "server.js"]
 
