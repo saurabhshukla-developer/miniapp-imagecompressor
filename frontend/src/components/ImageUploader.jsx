@@ -50,7 +50,7 @@ function ImageUploader({ selectedImage, onImageSelect }) {
             <span className="font-semibold text-indigo-600">Click to upload</span> or drag and drop
           </p>
           <p className="text-sm text-gray-500">
-            PNG, JPG, GIF, WEBP up to 10MB
+            PNG, JPG, GIF, WEBP up to 100MB
           </p>
           <input
             ref={fileInputRef}
